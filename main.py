@@ -17,6 +17,7 @@ class GetData(Resource):
 class SendData(Resource):
 
     def post(self):
+        print(request.get_data())
         json_data = request.get_json()
         insert_status = database_helper.insert(json_data[database_helper.COLUMN_PATIENT_NAME],
                                                json_data[database_helper.COLUMN_ENTRY_TIME],
