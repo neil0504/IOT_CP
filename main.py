@@ -15,6 +15,16 @@ class GetData(Resource):
         return "Post request to GetData"
 
 
+class Index(Resource):
+
+    def get(self):
+        return "Get request to Index"
+
+    def post(self):
+        return "Post request to Index"
+
+
 api.add_resource(GetData, "/getData")
+api.add_resource(Index, "/")
 if __name__ == '__main__':
     app.run(host=BASE, port=int("80"), debug=True)
