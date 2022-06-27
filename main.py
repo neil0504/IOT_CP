@@ -11,7 +11,7 @@ database_helper = DatabaseHelper()
 class GetData(Resource):
 
     def get(self):
-        json_data = request.get_json()
+        json_data = request.get_json(force=True)
         firebase_helper = FirestoreHelper()
         json_data = firebase_helper.execute_get_data(json_data[firebase_helper.get_parameter_username()])
         # json_data = database_helper.get_data()
